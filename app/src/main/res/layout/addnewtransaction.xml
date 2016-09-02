@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtinputfarmername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+          <EditText
+              android:id="@+id/edtfarmername"
+              android:layout_width="match_parent"
+              android:hint="Farmer Name"
+              android:inputType="textPersonName"
+              android:textColorHint="@color/colorAccent"
+              android:layout_height="wrap_content" />
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtlocation"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <EditText
+                android:id="@+id/edtlocation"
+                android:layout_width="match_parent"
+                android:hint="Location"
+                android:inputType="textPostalAddress"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtmobileno"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <EditText
+                android:id="@+id/edtmobileno"
+                android:layout_width="match_parent"
+                android:hint="Mobile No"
+                android:inputType="number"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_height="wrap_content"
+            android:id="@+id/txtlanddetails"
+            android:layout_width="match_parent">
+            <EditText
+                android:id="@+id/edtlanddetails"
+                android:layout_width="match_parent"
+                android:hint="LandDetails"
+                android:inputType="text"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>

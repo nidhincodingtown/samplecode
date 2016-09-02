@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/misexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <LinearLayout
+                        android:id="@+id/plucker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="PLUCKING CHARGES"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="No.of Trees:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/treeminus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edtreeno"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="number"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/treeplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="Cost per Tree:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/treecostminus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edpertreecost"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="numberDecimal"
+                                    android:text="0"
+
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/treecostplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Total.Amount:"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.86"
+                                android:orientation="horizontal"
+                                android:paddingLeft="75dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rssymbol"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/pluckingchargetotal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:gravity="center_horizontal"
+                                    android:hint="0"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:id="@+id/pluckerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/plucker" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <LinearLayout
+                        android:id="@+id/husker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pluckerview"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="DEHUSKING CHARGES"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="No.of Coconuts:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/coconutnominus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edtcoconutnumbers"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="number"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/coconutnoplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="Cost per Coconut:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/costpercoconutminus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edtcostpercoconut"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="numberDecimal"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/costpercoconutplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Total.Amount:"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.86"
+                                android:orientation="horizontal"
+                                android:paddingLeft="75dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rssymbol"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/dehuskingcharges"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:gravity="center_horizontal"
+                                    android:hint="0"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:id="@+id/huskerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/husker" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <LinearLayout
+                        android:id="@+id/loader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/huskerview"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="LOADING CHARGES"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="No.of Loads:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/noofloadsminus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edtnumberofloads"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="number"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/noofloadsplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.32"
+                                android:gravity="center_horizontal"
+                                android:paddingTop="5dp"
+                                android:text="Cost per Load:"
+                                android:textColor="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/costperloadminus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_minus" />
+
+                                <EditText
+                                    android:id="@+id/edtcostperload"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:inputType="numberDecimal"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                                <ImageButton
+                                    android:id="@+id/costperloadplus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@mipmap/ic_action_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="Total.Amount:"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.86"
+                                android:orientation="horizontal"
+                                android:paddingLeft="75dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rssymbol"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/loadingchargestotal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:hint="0"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:id="@+id/loaderview"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/husker" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/rssymbol"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/grandtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="0"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
